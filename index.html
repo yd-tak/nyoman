@@ -111,7 +111,32 @@
            margin-bottom: 30px;
            color: white;
         }
-       
+        
+        .holster{
+            display: flex!important;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow: column nowrap;
+        }
+        .videoBgWrapper {
+/*          display: flex;*/
+          margin: 1em auto;
+          flex: none;
+          overflow: auto;
+        }
+        .videoBgWrapper.y {
+          height: 100vh;
+          flex-flow: column nowrap;
+          overflow-x: hidden;
+        }
+        .y.mandatory-scroll-snapping {
+          scroll-snap-type: y mandatory;
+        }
+        .videoBgWrapper > div {
+          text-align: center;
+          scroll-snap-align: center;
+          flex: none;
+        }
     </style>
 
 </head>
@@ -120,57 +145,64 @@
         <source src="Dramatic_Baroque_Violin_Concerto.mp3" type="audio/mpeg">
       </audio>
     <main>
-        <div class="row">
-            <div class="videoBgWrapper">
-                <div class="textstyle">WELCOME TO THE ART OF CRAFTSMANSHIP</div>
-                <p class="textword">EXPERIENCE OUR 5 SENSES IN 5 <br>INTERACTIVE INSTALATIONS</p>
-                <video loop muted autoplay poster="page1.mp4" class="videoBg">
-                    <source src="page1.mp4" type="video/mp4">
-                </video>
-                <div class="textstyle">1. THE GIANT BOOK</div>
-                <p class="textword">Experience the enchanting narrative of artistry and craftsmanship’s legacy</p>
-                <video loop muted autoplay poster="page2.mp4" class="videoBg">
-                    <source src="page2.mp4" type="video/mp4">
-                </video>
+        <div class="holster">
+            <div class="videoBgWrapper y mandatory-scroll-snapping" dir="ltr">
+                <div>
+                    <p class="textstyle">WELCOME TO THE ART OF CRAFTSMANSHIP</p>
+                    <p class="textword">EXPERIENCE OUR 5 SENSES IN 5 <br>INTERACTIVE INSTALATIONS</p>
+                    <video loop muted autoplay poster="page1.mp4" class="videoBg">
+                        <source src="page1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <p class="textstyle">1. THE GIANT BOOK</p>
+                    <p class="textword">Experience the enchanting narrative of artistry and craftsmanship’s legacy</p>
+                    <video loop muted autoplay poster="page2.mp4" class="videoBg">
+                        <source src="page2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <p class="textstyle">2. STATUE ART OF NYOMAN NUARTA</p>
+                    <p class="textword">Unveil an exceptional sculpture by Nyoman Nuarta <br>“VICTORY DANCE”, complemented by the exquisite high <br>jewelry collection from the Passion Privé and<br> Nyoman Nuarta collaboration.</p>
+                    <video loop muted autoplay poster="page4.mp4" class="videoBg">
+                        <source src="page4.mp4" type="video/mp4">
+                    </video>
+                </div>
                
-                <div class="textstyle">2. STATUE ART OF NYOMAN NUARTA</div>
-                <p class="textword">Unveil an exceptional sculpture by Nyoman Nuarta <br>“VICTORY DANCE”, complemented by the exquisite high <br>jewelry collection from the Passion Privé and<br> Nyoman Nuarta collaboration.</p>
-                <video loop muted autoplay poster="page4.mp4" class="videoBg">
-                    <source src="page4.mp4" type="video/mp4">
-                </video>
-               
-                <div class="textstyle">3. TIME CAPSULE</div>
-                <p class="textword">Embark in a time capsule experience, celebrating <br>19 years of unwavering devotion and unconditional <br>love - Passion Jewelry, Passion Prive, Diamond & Co.</p>
-                <video loop muted autoplay poster="page3.mp4" class="videoBg">
-                    <source src="page3.mp4" type="video/mp4">
-                </video>
+                <div>
+                    <p class="textstyle">3. TIME CAPSULE</p>
+                    <p class="textword">Embark in a time capsule experience, celebrating <br>19 years of unwavering devotion and unconditional <br>love - Passion Jewelry, Passion Prive, Diamond & Co.</p>
+                    <video loop muted autoplay poster="page3.mp4" class="videoBg">
+                        <source src="page3.mp4" type="video/mp4">
+                    </video>
+                </div>
               
-                <div class="textstyle">4. DIAMOND JEWELRY PRESENTATION</div>
-                <p class="textword">SHOWCASING OUR SIGNATURES <br>AND CRAFTSMANSHIP</p>
-                <video loop muted autoplay poster="page5.mp4" class="videoBg">
-                    <source src="page5.mp4" type="video/mp4">
-                </video>
+                <div>
+                    <p class="textstyle">4. DIAMOND JEWELRY PRESENTATION</p>
+                    <p class="textword">SHOWCASING OUR SIGNATURES <br>AND CRAFTSMANSHIP</p>
+                    <video loop muted autoplay poster="page5.mp4" class="videoBg">
+                        <source src="page5.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="forminput">
+                    <div class="textstyle">Fill to redeem you exclusive gift</div>
+                    <form class="form-horizontal">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter your phone">
+                        </div>
+                        <br>
+                        <div class="mb-3">
+                            <button type="button" id="btnsubmit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>    
             </div>
         </div>
-    </main>
-    <main>
-        <div class="forminput">
-            <div class="textstyle">Fill to redeem you exclusive gift</div>
-            <form class="form-horizontal">
-                <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="phone" placeholder="Enter your phone">
-                </div>
-                <br>
-                <div class="mb-3">
-                    <button type="button" id="btnsubmit" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
-          </div>    
     </main>
     <script>
          $(document).ready(function(){
@@ -180,7 +212,10 @@
             } else {
                 var apiurl = 'https://www.passionjewelry.co.id/api/registernuart';
             }
-          
+            function PlayMusic() {
+              var play=document.getElementById("music");
+              play.play();
+            }     
            setTimeout(PlayMusic,8000);
            $("button").click(function(e){
              e.preventDefault();
@@ -225,10 +260,7 @@
             });
             
         })
-        function PlayMusic() {
-          var play=document.getElementById("music");
-          play.play();
-        }     
+        
     </script>
 </body>
 </html>
