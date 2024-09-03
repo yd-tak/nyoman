@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+   <style type="text/css">
+    /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: black;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+        }
+
+       
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .videoBg{
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .videoBg{
+            
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-aspect-ratio: 16/9) {
+            .videoBg {
+            
+                 width:100%; 
+                height: 100%;
+
+                padding:0
+            }
+        }
+       
+        video{
+            object-fit:fill
+
+        }
+        .textstyle{
+            position: relative;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .textword{
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .forminput{
+           margin-top: 30px;
+           margin-bottom: 30px;
+           color: white;
+        }
+       
+    </style>
+
+</head>
+<body>
+     <audio controls id="music" style="display: none;">
+        <source src="Dramatic_Baroque_Violin_Concerto.mp3" type="audio/mpeg">
+      </audio>
+    <main>
+        <div class="row">
+            <div class="videoBgWrapper">
+                <div class="textstyle">WELCOME TO THE ART OF CRAFTSMANSHIP</div>
+                <p class="textword">EXPERIENCE OUR 5 SENSES IN 5 <br>INTERACTIVE INSTALATIONS</p>
+                <video loop muted autoplay poster="page1.mp4" class="videoBg">
+                    <source src="page1.mp4" type="video/mp4">
+                </video>
+                <div class="textstyle">1. THE GIANT BOOK</div>
+                <p class="textword">Experience the enchanting narrative of artistry and craftsmanship’s legacy</p>
+                <video loop muted autoplay poster="page2.mp4" class="videoBg">
+                    <source src="page2.mp4" type="video/mp4">
+                </video>
+               
+                <div class="textstyle">2. STATUE ART OF NYOMAN NUARTA</div>
+                <p class="textword">Unveil an exceptional sculpture by Nyoman Nuarta <br>“VICTORY DANCE”, complemented by the exquisite high <br>jewelry collection from the Passion Privé and<br> Nyoman Nuarta collaboration.</p>
+                <video loop muted autoplay poster="page4.mp4" class="videoBg">
+                    <source src="page4.mp4" type="video/mp4">
+                </video>
+               
+                <div class="textstyle">3. TIME CAPSULE</div>
+                <p class="textword">Embark in a time capsule experience, celebrating <br>19 years of unwavering devotion and unconditional <br>love - Passion Jewelry, Passion Prive, Diamond & Co.</p>
+                <video loop muted autoplay poster="page3.mp4" class="videoBg">
+                    <source src="page3.mp4" type="video/mp4">
+                </video>
+              
+                <div class="textstyle">4. DIAMOND JEWELRY PRESENTATION</div>
+                <p class="textword">SHOWCASING OUR SIGNATURES <br>AND CRAFTSMANSHIP</p>
+                <video loop muted autoplay poster="page5.mp4" class="videoBg">
+                    <source src="page5.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </main>
+    <main>
+        <div class="forminput">
+            <div class="textstyle">Fill to redeem you exclusive gift</div>
+            <form class="form-horizontal">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Enter your phone">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <button type="button" id="btnsubmit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+          </div>    
+    </main>
+    <script>
+         $(document).ready(function(){
+            var host = window.location;
+            if (host.protocol == "http:") {
+                var apiurl = 'http://ecomm-pjw.local/api/registernuart';
+            } else {
+                var apiurl = 'https://www.passionjewelry.co.id/api/registernuart';
+            }
+          
+           setTimeout(PlayMusic,8000);
+           $("button").click(function(e){
+             e.preventDefault();
+              $(this).attr("disabled", true);
+              $(this).text("Please wait...");
+                var name = $("#name").val();
+                var phone = $("#phone").val();
+                if(name == "" || phone == ""){
+                    alert("Please fill in the form");
+                }else{
+                    if ($.isNumeric(phone) == false) {
+                        alert("Phone number must be numeric");
+                        window.location.href = host;
+                        return false;
+                    }
+                    var data = {
+                        name: name,
+                        phone: phone
+                    };
+                    $.ajax({
+                        type: 'get', 
+                        url: apiurl, 
+                        data: data, 
+                        dataType: 'json',
+                        success: function(res) { 
+                            if (res.status == 1) {
+                                alert(res.message);
+                                window.location.href = host;
+                            } else{
+                                alert(res.message);
+                            }
+                          
+                        }, 
+                        error: function(err) { 
+                          console.log(err);
+                          alert("Failed to submit data");
+                          window.location.href = host;
+                        }
+                    });
+
+                }
+            });
+            
+        })
+        function PlayMusic() {
+          var play=document.getElementById("music");
+          play.play();
+        }     
+    </script>
+</body>
+</html>
